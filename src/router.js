@@ -5,9 +5,7 @@ import LoginScreen from './login-screen.js';
 import MarketScreen from './market-screen';
 import NavBar from './nav-bar.js';
 
-
-
-let Router = ()=>{
+let Router = () => {
     return <HashRouter>
             <div>
                 <NavBar />
