@@ -1,11 +1,12 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
 let NavBar =() =>
     <div>
-        <NavLink to="/userProfile">User Profile</NavLink>
-        <NavLink to="/loginScreen">Login Screen</NavLink>
+        <NavLink to="/login">Login</NavLink>
+        <NavLink to="/profile">Profile</NavLink>
+        <NavLink to="/market">Market</NavLink>
     </div>
 
 export default NavBar;
