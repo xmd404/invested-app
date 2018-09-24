@@ -1,5 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import LoginScreen from './login-screen';
+import {Provider} from 'react-redux';
+import Router from './router.js'
 
-ReactDOM.render(<LoginScreen />, document.getElementById('root'));
+let app = 
+    <Provider>
+        <Router />
+    </Provider>
+
+ReactDOM.render(app, document.getElementById('root'));
