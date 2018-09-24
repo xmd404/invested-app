@@ -1,10 +1,10 @@
 import React from 'react';
 
-let loginInput = (props) =>
+let UserAuthenticationInput = (props) =>
     <div>
         <input type="text" className={props.className} placeHolder={props.placeHolder}>
         </input>
     </div>
 
 
-export default loginInput;
+export default UserAuthenticationInput;

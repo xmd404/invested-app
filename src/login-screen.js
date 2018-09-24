@@ -1,10 +1,10 @@
 import React from 'react';
 import LoginForm from './login-form.js';
 
-let loginScreen = () => 
+let LoginScreen = () => 
     <div>
-        <h1>Create an Account</h1>
+        <h1>Please log in below</h1>
         <LoginForm />
     </div>
 
-export default loginScreen;
+export default LoginScreen;
