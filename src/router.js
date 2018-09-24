@@ -10,7 +10,7 @@ let Router = () => {
         <HashRouter>
             <div>
                 <NavBar />
-                <Route exact path="/" component={UserProfile}/>
+                <Route exact path="/" component={UserProfile} />
                 <Route exact path="/profile" component={UserProfile} />
                 <Route exact path="/login" component={LoginScreen} />
                 <Route exact path="/market" component={MarketScreen} />
