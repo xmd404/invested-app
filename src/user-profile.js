@@ -2,7 +2,6 @@ import React from 'react';
 import NavBar from './nav-bar.js';
 import StockContainer from './stock-container.js';
 
-
 let UserProfile =()=>
     <div>
         <StockContainer />
@@ -10,6 +9,5 @@ let UserProfile =()=>
         <StockContainer />
         <StockContainer />
     </div>
-    
 
 export default UserProfile;
