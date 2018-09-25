@@ -6,19 +6,19 @@ import SignupScreen from './signup-screen';
 import MarketScreen from './market-screen';
 import NavBar from './nav-bar.js';
 
-
-
-let Router = ()=>{
-    return <HashRouter>
+let Router = () => {
+    return (
+        <HashRouter>
             <div>
                 <NavBar />
-                <Route exact path="/" component={UserProfile}/>
+                <Route exact path="/" component={UserProfile} />
                 <Route exact path="/profile" component={UserProfile} />
                 <Route exact path="/login" component={LoginScreen} />
                 <Route exact path="/signup" component={SignupScreen} />
                 <Route exact path="/market" component={MarketScreen} />
             </div>
         </HashRouter>
+    )
 }
 
 export default Router;
