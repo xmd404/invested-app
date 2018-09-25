@@ -10,8 +10,8 @@ let LoginForm = () =>
 
             // })
         }}>
-        <UserAuthenticationInput className="email" placeHolder="Email" />
-        <UserAuthenticationInput className="password" placeHolder="Password" />
+        <UserAuthenticationInput className="email" placeHolder="Email" type="email" />
+        <UserAuthenticationInput className="password" placeHolder="Password" type="password" />
         <input type="submit" value="Continue"></input>
     </form>
 

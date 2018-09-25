@@ -1,10 +1,10 @@
 import React from 'react';
-import SignupForm from './login-form.js';
+import SignupFormContainer from './signup-form-container';
 
 let SignupScreen = () => 
     <div>
         <h1>Create an Account</h1>
-        <SignupForm />
+        <SignupFormContainer />
     </div>
 
 export default SignupScreen;
