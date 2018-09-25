@@ -17,6 +17,9 @@ class LoginFormContainer extends React.Component {
         let captureUserPassword = (value) => 
             this.setState({password: value})
 
+        let clearUserEmail = () =>
+            this.setState({email: '', password: ''})
+
         console.log(this.state);
 
         return <LoginForm 
@@ -24,6 +27,7 @@ class LoginFormContainer extends React.Component {
             {...this.props}
             captureUserEmail={captureUserEmail}
             captureUserPassword={captureUserPassword}
+            clearUserEmail={clearUserEmail}
         />
     }
 }
