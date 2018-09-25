@@ -1,9 +1,6 @@
 import React from 'react';
 import UserAuthenticationInput from './user-authentication-input.js';
 import loginUser from './loginUser.js';
-import { Redirect } from 'react-router-dom';
-import UserProfile from './user-profile.js';
-// import NavBar from './nav-bar';
 
 let LoginForm = (props) => {
     return <form
