@@ -1,7 +1,15 @@
 import React from 'react';
+import NavBar from './nav-bar.js';
+import StockContainer from './stock-container.js';
 
 
 let UserProfile =()=>
-    <h1>This is the User User Profile</h1>
+    <div>
+        <StockContainer />
+        <StockContainer />
+        <StockContainer />
+        <StockContainer />
+    </div>
+    
 
 export default UserProfile;
