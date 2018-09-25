@@ -3,13 +3,10 @@ import UserAuthenticationInput from './user-authentication-input.js';
 import loginUser from './loginUser.js';
 
 let SignupForm = (props) => {
-    console.log(props);
     return <form
         className="signup-form"
         onSubmit={ (event) => {
             event.preventDefault();
-            console.log(event.target.value);
-            console.log(props);
             fetch('/usersignup', {
                 method: 'POST',
                 body: JSON.stringify(props),
@@ -19,7 +16,6 @@ let SignupForm = (props) => {
                 return data.json();
             })
             .then(content=> {
-                console.log(content);
                 loginUser(props);
             })
         }}>

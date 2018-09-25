@@ -20,8 +20,6 @@ class LoginFormContainer extends React.Component {
         let clearUserEmail = () =>
             this.setState({email: '', password: ''})
 
-        console.log(this.state);
-
         return <LoginForm 
             {...this.state}
             {...this.props}

@@ -21,8 +21,6 @@ class SignupFormContainer extends React.Component {
         let captureUserPassword = (value) => 
             this.setState({password: value})
 
-        console.log(this.state);
-
         return <SignupForm 
             {...this.state}
             {...this.props}

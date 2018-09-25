@@ -8,9 +8,6 @@ let loginUser = (props) => {
         return data.text();
     })
     .then(result=> {
-        console.log(result);
-        console.log('19');
-        console.log(props);
         if (result === 'Wrong login information') {
             console.log(result);
         } else if (result === 'Wrong password') {
