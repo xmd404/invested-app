@@ -17,7 +17,8 @@ let SignupForm = (props) => {
                 //     console.log(item);
                 // })
                 method: 'POST',
-                body: JSON.stringify(props)
+                body: JSON.stringify(props),
+                headers: { 'Content-Type': 'application/json'} 
             })
             .then(data=> {
                 return data.json();
