@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import Router from './router.js'
 
-let app = 
+let App = 
     <Provider>
         <Router />
     </Provider>
 
-ReactDOM.render(app, document.getElementById('root'));
+ReactDOM.render(App, document.getElementById('root'));
