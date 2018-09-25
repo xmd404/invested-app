@@ -4,3 +4,15 @@ CREATE TABLE users(
     email TEXT NOT NULL UNIQUE,
     password TEXT NOT NULL
 );
+
+CREATE TABLE portfolio(
+    userId serial PRIMARY KEY NOT NULL,
+    stockId INTEGER,
+    stockSharesOwned INTEGER,
+    stockPurchasedPrice INTEGER
+);
+
+CREATE TABLE stocks(
+    stockName TEXT NOT NULL,
+    stockId INTEGER
+);
