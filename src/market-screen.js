@@ -1,17 +1,22 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import StockCard from './stock-card';
 
-let MarketScreen = () =>
+let mapStateToProps = (state) => {
+    return {stocks: state.stocks}
+}
+
+let MarketScreen = (props) =>
     <div>
         <div className="screen-header">
-            <h1>MarketScreen</h1>
-            <p>Stock information will go here.</p>
+            <h1>Marketplace</h1>
         </div>
-        <StockCard />
-        <StockCard />
-        <StockCard />
-        <StockCard />
-        <StockCard />
+        <div>
+            {props.stocks.map(stock =>
+                <StockCard stock={stock} key={stock.symbol} />
+            )}
+        </div>
     </div>
 
-export default MarketScreen;
+let MarketScreenContainer = connect(mapStateToProps)(MarketScreen);
+export default MarketScreenContainer;
