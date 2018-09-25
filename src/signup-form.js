@@ -33,9 +33,9 @@ let SignupForm = (props) => {
             value={props.userName}
                 // props.addNewPost(event.target.value);
         ></input> */}
-        <UserAuthenticationInput props={props} className="full-name" placeHolder="Full Name" type="text" stateName="userName" stateFunction={props.captureUserName} />
-        <UserAuthenticationInput props={props} className="email" placeHolder="Email" type="email" stateName="email" stateFunction={props.captureUserEmail} />
-        <UserAuthenticationInput props={props} className="password" placeHolder="Password" type="password" stateName="password" stateFunction={props.captureUserPassword} />
+        <UserAuthenticationInput props={props} className="full-name" placeHolder="Full Name" type="text" stateName={props.userName} stateFunction={props.captureUserName} />
+        <UserAuthenticationInput props={props} className="email" placeHolder="Email" type="email" stateName={props.email} stateFunction={props.captureUserEmail} />
+        <UserAuthenticationInput props={props} className="password" placeHolder="Password" type="password" stateName={props.password} stateFunction={props.captureUserPassword} />
         {/* <UserAuthenticationInput props={props} className="confirm-password" placeHolder="Confirm Password" type="password" /> */}
         <input type="submit" value="Continue"></input>
     </form>
