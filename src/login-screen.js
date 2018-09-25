@@ -3,7 +3,7 @@ import LoginForm from './login-form.js';
 
 let LoginScreen = () => 
     <div>
-        <h1>Create an Account</h1>
+        <h1>Please log in below</h1>
         <LoginForm />
     </div>
 

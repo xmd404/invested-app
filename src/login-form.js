@@ -1,20 +1,18 @@
 import React from 'react';
-import LoginInput from './login-input.js';
+import UserAuthenticationInput from './user-authentication-input.js';
 
-let loginForm = () =>
+let LoginForm = () =>
     <form
         className="login-form"
         onSubmit={ (event) => {
-            // event.preventDefault();
-            // fetch('', {
+            event.preventDefault();
+            // fetch('/', {
 
             // })
         }}>
-        <LoginInput className="full-name" placeHolder="Full Name" />
-        <LoginInput className="email" placeHolder="Email" />
-        <LoginInput className="password" placeHolder="Password" />
-        <LoginInput className="confirm-password" placeHolder="Confirm Password" />
+        <UserAuthenticationInput className="email" placeHolder="Email" type="email" />
+        <UserAuthenticationInput className="password" placeHolder="Password" type="password" />
         <input type="submit" value="Continue"></input>
     </form>
 
-export default loginForm;
+export default LoginForm;
