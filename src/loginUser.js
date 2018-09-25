@@ -1,6 +1,3 @@
-import { Redirect } from 'react-router-dom';
-import React from 'react';
-
 let loginUser = (props) => {
     fetch('/userlogin', {
         method: 'POST',
