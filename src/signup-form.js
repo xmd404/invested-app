@@ -1,5 +1,6 @@
 import React from 'react';
 import UserAuthenticationInput from './user-authentication-input.js';
+import loginUser from './loginUser.js';
 
 let SignupForm = (props) => {
     console.log(props);
@@ -10,20 +11,16 @@ let SignupForm = (props) => {
             console.log(event.target.value);
             console.log(props);
             fetch('/usersignup', {
-                // .then(data=> {
-                //     return data.text()
-                // })
-                // .then(item=> {
-                //     console.log(item);
-                // })
                 method: 'POST',
-                body: JSON.stringify(props)
+                body: JSON.stringify(props),
+                headers: { 'Content-Type': 'application/json'} 
             })
             .then(data=> {
                 return data.json();
             })
             .then(content=> {
                 console.log(content);
+                loginUser(props);
             })
         }}>
         {/* <input 

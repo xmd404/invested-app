@@ -1,17 +1,19 @@
 import React from 'react';
 import UserAuthenticationInput from './user-authentication-input.js';
+import loginUser from './loginUser.js';
+import { Redirect } from 'react-router-dom';
+import UserProfile from './user-profile.js';
+// import NavBar from './nav-bar';
 
-let LoginForm = () =>
+let LoginForm = (props) =>
     <form
         className="login-form"
         onSubmit={ (event) => {
             event.preventDefault();
-            // fetch('/', {
-
-            // })
+            loginUser(props);
         }}>
-        <UserAuthenticationInput className="email" placeHolder="Email" type="email" />
-        <UserAuthenticationInput className="password" placeHolder="Password" type="password" />
+        <UserAuthenticationInput className="email" placeHolder="Email" type="email" stateName='email' stateFunction={props.captureUserEmail} />
+        <UserAuthenticationInput className="password" placeHolder="Password" type="password" stateName='password' stateFunction={props.captureUserPassword} />
         <input type="submit" value="Continue"></input>
     </form>
 

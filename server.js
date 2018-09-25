@@ -28,8 +28,10 @@ let postToken = (req, res) => {
     readBody(req, (body) => {
         let credentials = JSON.parse(body);
         let { email, password } = credentials;
-        db.one(`SELECT * FROM users WHERE users.email = ${email}`)
+        console.log(credentials);
+        db.one(`SELECT * FROM users WHERE users.email = '${email}'`)
             .then(user => {
+                console.log(user)
                 if (user.password === password && user.email === email) {
                     let token = createToken(user);
                     res.send(token);
@@ -59,6 +61,11 @@ let checkToken = (req, res, next) => {
     }
 };
 
+let postUserLogin = (req, res) => {
+    readBody(req, (body) => {
+        
+    })
+};
 
 let postUserSignupInformation = (req, res) => {
     readBody(req, (body) => {
@@ -74,5 +81,6 @@ let postUserSignupInformation = (req, res) => {
 
 let server = express();
 server.post('/usersignup', postUserSignupInformation)
+server.post('/userlogin', postToken);
 
 server.listen(3001);
