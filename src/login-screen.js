@@ -3,7 +3,7 @@ import LoginFormContainer from './login-form-container.js';
 
 let LoginScreen = (props) => 
     <div>
-        <h1>Please log in below</h1>
+        <h1 className="login-header">Please log in below</h1>
         <LoginFormContainer props={props} />
     </div>
 
