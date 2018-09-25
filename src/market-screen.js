@@ -3,8 +3,10 @@ import StockCard from './stock-card';
 
 let MarketScreen = () =>
     <div>
-        <h1>MarketScreen</h1>
-        <p>Stock information will go here.</p>
+        <div className="screen-header">
+            <h1>MarketScreen</h1>
+            <p>Stock information will go here.</p>
+        </div>
         <StockCard />
         <StockCard />
         <StockCard />
