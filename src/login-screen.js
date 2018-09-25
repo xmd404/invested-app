@@ -1,10 +1,10 @@
 import React from 'react';
 import LoginFormContainer from './login-form-container.js';
 
-let LoginScreen = () => 
+let LoginScreen = (props) => 
     <div>
         <h1>Please log in below</h1>
-        <LoginFormContainer />
+        <LoginFormContainer props={props} />
     </div>
 
 export default LoginScreen;

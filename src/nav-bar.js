@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 let NavBar = () =>
     <div>
         <NavLink to="/login">Login</NavLink>
+        <NavLink to="/signup">Sign Up</NavLink>
         <NavLink to="/profile">Profile</NavLink>
         <NavLink to="/market">Market</NavLink>
     </div>
