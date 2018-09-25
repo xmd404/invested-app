@@ -1,13 +1,16 @@
 import React from 'react';
-import NavBar from './nav-bar.js';
-import StockContainer from './stock-container.js';
+import StockCard from './stock-card.js';
 
 let UserProfile =()=>
     <div>
-        <StockContainer />
-        <StockContainer />
-        <StockContainer />
-        <StockContainer />
+        <div className="screen-header">
+            <h1>User Portfolio</h1>
+            <p>Here are the users stock and current value</p>
+        </div>
+        <StockCard />
+        <StockCard />
+        <StockCard />
+        <StockCard />
     </div>
 
 export default UserProfile;

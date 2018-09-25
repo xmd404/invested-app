@@ -1,0 +1,39 @@
+.nav-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.nav-links{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.screen-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.stock-card{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.stock-info-short{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.buy-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.qty-input{
+    margin: 1em;
+    padding: .5em;
+}
+.buy-btn{
+    margin: 1em;
+    padding: .5em;
+}
