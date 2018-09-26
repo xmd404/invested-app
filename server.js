@@ -21,17 +21,15 @@ let readBody = (req, callback) => {
     });
     req.on('end', () => {
         callback(body);
-    })
-}
+    });
+};
 
 let postToken = (req, res) => {
     readBody(req, (body) => {
         let credentials = JSON.parse(body);
         let { email, password } = credentials;
-        console.log(credentials);
         db.one(`SELECT * FROM users WHERE users.email = '${email}'`)
             .then(user => {
-                console.log(user)
                 if (user.password === password && user.email === email) {
                     let token = createToken(user);
                     res.send(token);
@@ -42,7 +40,7 @@ let postToken = (req, res) => {
             .catch((err) => {
                 res.send('Wrong login information');
             })
-    })
+    });
 };
 
 let checkToken = (req, res, next) => {
@@ -61,12 +59,6 @@ let checkToken = (req, res, next) => {
     }
 };
 
-let postUserLogin = (req, res) => {
-    readBody(req, (body) => {
-        
-    })
-};
-
 let postUserSignupInformation = (req, res) => {
     readBody(req, (body) => {
         let userInformation = JSON.parse(body);
@@ -76,7 +68,7 @@ let postUserSignupInformation = (req, res) => {
         .then(data=> {
             res.send(JSON.stringify(userInformation));
         })
-    })
+    });
 };
 
 let server = express();
