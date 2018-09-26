@@ -1,0 +1,4 @@
+# server side git ignore
+
+# dependencies
+/node_modules

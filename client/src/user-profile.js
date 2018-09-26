@@ -6,7 +6,7 @@ let mapStateToProps = (state) => {
     return {stocks: state.stoks}
 }
 
-let UserProfile = () =>
+let UserProfile = (props) =>
     <div>
         <div className="screen-header">
             <h1>User Portfolio</h1>
