@@ -1,3 +1,4 @@
+import React from 'react';
 import { connect } from 'react-redux';
 const fetch = require('node-fetch');
 
@@ -13,5 +14,4 @@ let priceFetch = () => {
 }
 
 // let connectedPriceFetch = connect(state => state)(priceFetch);
-
 export default priceFetch;
