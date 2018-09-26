@@ -68,3 +68,8 @@
 .signup-terms-of-service {
     text-align: center;
 }
+.stock-details-history-row {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+}
