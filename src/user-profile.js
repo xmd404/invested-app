@@ -1,7 +1,12 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import StockCard from './stock-card.js';
 
-let UserProfile =()=>
+let mapStateToProps = (state) => {
+    return {stocks: state.stoks}
+}
+
+let UserProfile = () =>
     <div>
         <div className="screen-header">
             <h1>User Portfolio</h1>
@@ -13,4 +18,5 @@ let UserProfile =()=>
         <StockCard />
     </div>
 
+let UserProfileContainer = connect(mapStateToProps)(UserProfile);
 export default UserProfile;
