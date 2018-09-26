@@ -19,4 +19,4 @@ let UserProfile = () =>
     </div>
 
 let UserProfileContainer = connect(mapStateToProps)(UserProfile);
-export default UserProfile;
+export default UserProfileContainer;
