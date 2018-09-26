@@ -4,8 +4,18 @@ const pg = require('pg-promise')();
 const dbConfig = name;
 const db = pg(dbConfig);
 const express = require('express');
+const fetch = require('node-fetch');
 
-
+export let priceFetch = () => {
+    fetch(`https://api.iextrading.com/1.0/stock/aapl/price`)
+        .then(response =>{
+            return response.json()})
+            .then(data =>{
+                let results = JSON.stringify(data);
+                console.log(results);
+                return results;
+            })
+}
 
 let createToken = user => 
     jwt.sign(
