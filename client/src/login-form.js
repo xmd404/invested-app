@@ -9,7 +9,7 @@ let LoginForm = (props) => {
         className="login-form"
         onSubmit={ (event) => {
             event.preventDefault();
-            props.clearUserEmail();
+            // props.clearUserEmail();
             loginUser(props);
         }}>
         <UserAuthenticationInput 
@@ -26,9 +26,10 @@ let LoginForm = (props) => {
             className="password" 
             placeHolder="Password" 
             type="password" 
-            stateName={props.password} 
-            stateFunction={props.captureUserPassword} 
+            stateName="loginPasswordInput"
+            stateInput={props.loginPasswordInput} 
             inputClassName="login-input" 
+            {...props}
         />
         <input type="submit" value="Continue" className="login-submit-button" ></input>
     </form>
