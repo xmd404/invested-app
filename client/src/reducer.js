@@ -13,6 +13,16 @@ let reducer = (oldState, action) => {
             stockPrice: action.stockPrice,
             stockSymbol: action.stockSymbol
         }
+    } else if (action.type === 'SET_QUANTITY_TO_BUY') {
+        return {
+            ...oldState,
+            quantityToBuy: action.quantityToBuy
+        }
+    } else if (action.type ==='SET_PORTFOLIO_QUANTITY') {
+        return {
+            ...oldState,
+            portfolioQuantity: action.portfolioQuantity
+        }
     } else {
         return {
             ...oldState
