@@ -12,8 +12,6 @@ let StockDetailBuyForm = (props) =>
                     event.preventDefault();
                     let value = event.target.value;
                     props.dispatch({type: 'SET_QUANTITY_TO_BUY', quantityToBuy: value})
-                    console.log(event.target.value);
-                    console.log(props);
                 }}
                 type="number"
             />
