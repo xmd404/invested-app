@@ -1,4 +1,3 @@
-
 let priceFetch = () => {
     return fetch(`https://api.iextrading.com/1.0/stock/aapl/price`)
         .then(response =>{

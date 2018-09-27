@@ -35,7 +35,9 @@ let initialState = {
     loginEmailInput: '',
     loginPasswordInput: '',
     quantityToBuy: '',
-    portfolioQuantity: ''
+    portfolioQuantity: '',
+    companyName: '',
+    description: ''
 }
 
 let store = createStore(
