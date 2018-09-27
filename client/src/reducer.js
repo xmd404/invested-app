@@ -5,6 +5,13 @@ let reducer = (oldState, action) => {
             ...oldState,
             loginEmailInput: action.userInput
         }
+    }
+    else if(action.type ==='SET_STOCK_PRICE'){
+        return{
+            ...oldState,
+            stockPrice: action.stockPrice,
+            stockSymbol: action.stockSymbol
+        }
     } else {
         return {
             ...oldState
