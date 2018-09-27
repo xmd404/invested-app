@@ -1,6 +1,5 @@
 let reducer = (oldState, action) => {
     if (action.type === 'SET_CREDENTIAL_INPUT') {
-        console.log(action);
         let key = action.stateName;
         return {
             ...oldState,
@@ -21,8 +20,30 @@ let reducer = (oldState, action) => {
             description: action.description,
             companyName: action.companyName
         }
-    }
-    else {
+    } else if (action.type === 'SET_QUANTITY_TO_BUY') {
+        return {
+            ...oldState,
+            quantityToBuy: action.quantityToBuy
+        }
+    } else if (action.type ==='SET_PORTFOLIO_QUANTITY') {
+        return {
+            ...oldState,
+            portfolioQuantity: action.portfolioQuantity
+        }
+    } else if (action.type === 'CLEAR_LOGIN_INPUT') {
+        return {
+            ...oldState,
+            loginEmailInput: '',
+            loginPasswordInput: ''
+        }
+    } else if (action.type === 'CLEAR_SIGNUP_INPUT') {
+        return {
+            ...oldState,
+            signupNameInput: '',
+            signupEmailInput: '',
+            signupPasswordInput: '',
+        }
+    } else {
         return {
             ...oldState
         }
