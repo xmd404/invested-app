@@ -1,2 +1,5 @@
 #root level git ignore
 .DS_Store
+
+/node_modules
+variables
