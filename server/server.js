@@ -65,11 +65,16 @@ let checkToken = (req, res, next) => {
 let postUserSignupInformation = (req, res) => {
     readBody(req, (body) => {
         let userInformation = JSON.parse(body);
+        console.log(userInformation);
         db.query(`INSERT INTO
             users (userName, email, password, cash, portfolioQuantity)
-            VALUES ('${userInformation.userName}', '${userInformation.email}', '${userInformation.password}', '10000', '0' )`)
+            VALUES ('${userInformation.signupNameInput}', '${userInformation.signupEmailInput}', '${userInformation.signupPasswordInput}', '10000', '0' )`)
         .then(data=> {
-            res.send(JSON.stringify(userInformation));
+            res.set('Access-Control-Allow-Origin', '*');
+            res.set('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
+            res.set('Access-Control-Allow-Headers', 'Origin, Content-Type, X-Auth-Token');
+            console.log(userInformation);
+            res.send(userInformation);
         })
     });
 };

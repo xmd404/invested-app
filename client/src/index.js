@@ -29,6 +29,9 @@ let initialState = {
             "description": "Tesla Inc is a vertically integrated sustainable energy company. It designs, develops, manufactures and sells high-performance fully electric vehicles and electric vehicle powertrain components."
         }
     ],
+    signupNameInput: '',
+    signupEmailInput: '',
+    signupPasswordInput: '',
     loginEmailInput: '',
     loginPasswordInput: '',
     portfolioQuantity: ''

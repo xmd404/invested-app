@@ -1,23 +1,14 @@
 import React from 'react';
 import UserAuthenticationInput from './user-authentication-input.js';
 import loginUser from './loginUser.js';
+import signupUser from './signupUser';
 
 let SignupForm = (props) => {
     return <form
         className="signup-form"
         onSubmit={ (event) => {
             event.preventDefault();
-            fetch('/usersignup', {
-                method: 'POST',
-                body: JSON.stringify(props),
-                headers: { 'Content-Type': 'application/json'} 
-            })
-            .then(data=> {
-                return data.json();
-            })
-            .then(content=> {
-                loginUser(props);
-            })
+            signupUser(props);
         }}>
         {/* <input 
             onChange={ (event) => {
@@ -30,30 +21,30 @@ let SignupForm = (props) => {
                 // props.addNewPost(event.target.value);
         ></input> */}
         <UserAuthenticationInput 
-            props={props} 
+            {...props} 
             className="full-name" 
             placeHolder="Full Name" 
             type="text" 
-            stateName={props.userName} 
-            stateFunction={props.captureUserName} 
+            stateName="signupNameInput" 
+            stateInput={props.signupNameInput}
             inputClassName="signup-input"
         />
         <UserAuthenticationInput 
-            props={props} 
+            {...props} 
             className="email" 
             placeHolder="Email" 
             type="email" 
-            stateName={props.email} 
-            stateFunction={props.captureUserEmail} 
+            stateName="signupEmailInput" 
+            stateInput={props.signupEmailInput}
             inputClassName="signup-input"
         />
         <UserAuthenticationInput 
-            props={props} 
+            {...props} 
             className="password" 
             placeHolder="Password" 
             type="password" 
-            stateName={props.password} 
-            stateFunction={props.captureUserPassword} 
+            stateName="signupPasswordInput"
+            stateInput={props.signupPasswordInput}
             inputClassName="signup-input"
         />
         {/* <UserAuthenticationInput props={props} className="confirm-password" placeHolder="Confirm Password" type="password" /> */}
