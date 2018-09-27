@@ -2,6 +2,7 @@ import React from 'react';
 import UserAuthenticationInput from './user-authentication-input.js';
 import loginUser from './loginUser.js';
 import signupUser from './signupUser';
+import clearUserInput from './clearUserInput';
 
 let SignupForm = (props) => {
     return <form
@@ -9,17 +10,8 @@ let SignupForm = (props) => {
         onSubmit={ (event) => {
             event.preventDefault();
             signupUser(props);
+            clearUserInput(props, 'SIGNUP');
         }}>
-        {/* <input 
-            onChange={ (event) => {
-                let value = event.target.value;
-                console.log(value);
-                props.captureUserName(event.target.value);
-            } }
-            type="text"
-            value={props.userName}
-                // props.addNewPost(event.target.value);
-        ></input> */}
         <UserAuthenticationInput 
             {...props} 
             className="full-name" 
