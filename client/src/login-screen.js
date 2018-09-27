@@ -1,10 +1,21 @@
 import React from 'react';
-import LoginFormContainer from './login-form-container.js';
+import LoginForm from './login-form.js';
+import { connect } from 'react-redux';
 
 let LoginScreen = (props) => 
     <div>
         <h1 className="login-header">Please log in below</h1>
-        <LoginFormContainer props={props} />
+        <LoginForm 
+            {...props}
+        />
     </div>
 
-export default LoginScreen;
+let ConnectedLoginScreen = connect(state=> {
+    console.log(state);
+    return {
+        loginEmailInput: state.loginEmailInput,
+        loginPasswordInput: state.loginPasswordInput
+    }
+})(LoginScreen);
+
+export default ConnectedLoginScreen;
