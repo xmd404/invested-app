@@ -8,7 +8,7 @@ let UserAuthenticationInput = (props) => {
                 let value = event.target.value;
                 // props.stateFunction(value);
                 console.log(value);
-                props.dispatch({type: 'SET_LOGIN_EMAIL_INPUT', userInput: value})
+                props.dispatch({type: 'SET_CREDENTIAL_INPUT', userInput: value, stateName: props.stateName})
             } }
             value={props.stateInput}
             type={props.type} 
