@@ -6,10 +6,14 @@ let signupUser = (props) => {
         body: JSON.stringify(props),
     })
     .then(data=> {
-        console.log(data);
         return data.text()})
         .then(content=> {
-            loginUser(props);
+            let loginCredentials = {
+                ...props,
+                loginEmailInput: props.signupEmailInput,
+                loginPasswordInput: props.signupPasswordInput
+            }
+            loginUser(loginCredentials);
         })
 }
 
