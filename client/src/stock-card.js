@@ -1,13 +1,13 @@
 import React from 'react';
-import priceFetch from './price-fetch.js';
+import { connect } from 'react-redux'
 
-let StockCard = () =>{
+let StockCard = (props) =>{
     return <div className="stock-card">
         <br/>
         <div className="stock-info-short">
             <h3 className="company-name">Company Name</h3>
             <p className="company-description">Short company description.</p>
-            <p className="current-stock-price">Stock Price: {priceFetch()}</p>
+            <p className="current-stock-price">Stock Price: {props.stockPrice}</p>
         </div>
         <div className="buy-info">
             <input className="qty-input" type="text" placeholder="Qty"/>
@@ -16,4 +16,6 @@ let StockCard = () =>{
     </div>
 }
 
-export default StockCard;
+let connectedStockCard = connect(state=>state)(StockCard);
+
+export default connectedStockCard;

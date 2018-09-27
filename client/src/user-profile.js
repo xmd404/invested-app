@@ -1,9 +1,22 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import StockCard from './stock-card.js';
+import priceFetch from './price-fetch.js';
 
-let mapStateToProps = (state) => {
-    return {stocks: state.stoks}
+// let mapStateToProps = (state) => {
+//     return {stocks: state.stoks}
+// }
+
+class FetchStocks extends React.Component{
+    componentDidMount(){
+        priceFetch()
+            .then(price=>{
+                this.props.dispatch({type: "SET_STOCK_PRICE", stockSymbol: "AAPL", stockPrice: price})
+            })
+    }
+    render(){
+        return <UserProfile />
+    }
 }
 
 let UserProfile = (props) =>
@@ -12,11 +25,8 @@ let UserProfile = (props) =>
             <h1>User Portfolio</h1>
             <p>Here are the users stock and current value</p>
         </div>
-        <StockCard />
-        <StockCard />
-        <StockCard />
-        <StockCard />
+        <StockCard stockPrice={props.stockPrice}/>
     </div>
 
-let UserProfileContainer = connect(mapStateToProps)(UserProfile);
+let UserProfileContainer = connect(state=> state)(FetchStocks);
 export default UserProfileContainer;
