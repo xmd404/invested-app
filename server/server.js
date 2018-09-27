@@ -27,11 +27,14 @@ let readBody = (req, callback) => {
 let postToken = (req, res) => {
     readBody(req, (body) => {
         let credentials = JSON.parse(body);
-        let { email, password } = credentials;
-        db.one(`SELECT * FROM users WHERE users.email = '${email}'`)
+        let { loginEmailInput, loginPasswordInput } = credentials;
+        db.one(`SELECT * FROM users WHERE users.email = '${loginEmailInput}'`)
             .then(user => {
-                if (user.password === password && user.email === email) {
+                if (user.password === loginPasswordInput && user.email === loginEmailInput) {
                     let token = createToken(user);
+                    res.set('Access-Control-Allow-Origin', '*');
+                    res.set('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
+                    res.set('Access-Control-Allow-Headers', 'Origin, Content-Type, X-Auth-Token');
                     res.send(token);
                 } else {
                     res.send('Wrong password');
@@ -63,8 +66,8 @@ let postUserSignupInformation = (req, res) => {
     readBody(req, (body) => {
         let userInformation = JSON.parse(body);
         db.query(`INSERT INTO
-            users (userName, email, password)
-            VALUES ('${userInformation.userName}', '${userInformation.email}', '${userInformation.password}' )`)
+            users (userName, email, password, cash, portfolioQuantity)
+            VALUES ('${userInformation.userName}', '${userInformation.email}', '${userInformation.password}', '10000', '0' )`)
         .then(data=> {
             res.send(JSON.stringify(userInformation));
         })
