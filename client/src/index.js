@@ -5,7 +5,6 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux'; 
 import reducer from './reducer';
 
-// let reducer = (oldState, action) => oldState;
 
 let initialState = {
     stocks: [
