@@ -3,7 +3,9 @@ import UserAuthenticationInput from './user-authentication-input.js';
 import loginUser from './loginUser.js';
 
 let LoginForm = (props) => {
+    console.log(props);
     return <form
+        props={props}
         className="login-form"
         onSubmit={ (event) => {
             event.preventDefault();
@@ -14,9 +16,11 @@ let LoginForm = (props) => {
             className="email" 
             placeHolder="Email" 
             type="email" 
-            stateName={props.email} 
-            stateFunction={props.captureUserEmail}
+            stateName="loginEmailInput" 
+            // stateFunction={props.captureUserEmail}
             inputClassName="login-input" 
+            stateInput={props.loginEmailInput}
+            {...props}
         />
         <UserAuthenticationInput 
             className="password" 

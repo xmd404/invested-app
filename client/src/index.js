@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import Router from './router';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux'; 
+import reducer from './reducer';
 
-let reducer = (oldState, action) => oldState;
 
 let initialState = {
     stocks: [
@@ -28,7 +28,9 @@ let initialState = {
             "companyName": "Tesla Inc.",
             "description": "Tesla Inc is a vertically integrated sustainable energy company. It designs, develops, manufactures and sells high-performance fully electric vehicles and electric vehicle powertrain components."
         }
-    ]
+    ],
+    loginEmailInput: '',
+    loginPasswordInput: ''
 }
 
 let store = createStore(
