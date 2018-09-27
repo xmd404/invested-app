@@ -1,5 +1,5 @@
 let loginUser = (props) => {
-    fetch('http://localhost:3001/userlogin', {
+    fetch(`${process.env.REACT_APP_APIHOST}/userlogin`, {
         method: 'POST',
         body: JSON.stringify(props),
     })

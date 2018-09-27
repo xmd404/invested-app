@@ -1,7 +1,7 @@
 import loginUser from './loginUser';
 
 let signupUser = (props) => {
-    fetch('http://localhost:3001/usersignup', {
+    fetch(`${process.env.REACT_APP_APIHOST}/usersignup`, {
         method: 'POST',
         body: JSON.stringify(props),
     })
