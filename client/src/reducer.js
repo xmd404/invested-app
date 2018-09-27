@@ -13,7 +13,16 @@ let reducer = (oldState, action) => {
             stockPrice: action.stockPrice,
             stockSymbol: action.stockSymbol
         }
-    } else {
+    } 
+    else if(action.type ==='SET_STOCK_DETAILS'){
+        return{
+            ...oldState,
+            stockSymbol: action.stockSymbol,
+            description: action.description,
+            companyName: action.companyName
+        }
+    }
+    else {
         return {
             ...oldState
         }
