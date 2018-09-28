@@ -29,7 +29,8 @@ let reducer = (oldState, action) => {
     } else if (action.type ==='SET_PORTFOLIO_QUANTITY') {
         return {
             ...oldState,
-            portfolioQuantity: action.portfolioQuantity
+            portfolioQuantity: (oldState.portfolioQuantity + action.portfolioQuantity),
+            userCash: (action.userCash)
         }
     } else if (action.type === 'CLEAR_LOGIN_INPUT') {
         return {
@@ -52,6 +53,7 @@ let reducer = (oldState, action) => {
     } else if (action.type === 'SET_PROFILE_HEADER') {
         return {
             ...oldState,
+            userEmail: action.userEmail,
             userName: action.userName,
             userCash: action.userCash,
             userPortfolioValue: action.userPortfolioValue,

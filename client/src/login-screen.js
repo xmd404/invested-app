@@ -11,7 +11,7 @@ let LoginScreen = (props) =>
     </div>
 
 let ConnectedLoginScreen = connect(state=> {
-    console.log(state);
+    // console.log(state);
     return {
         loginEmailInput: state.loginEmailInput,
         loginPasswordInput: state.loginPasswordInput,

@@ -9,7 +9,7 @@ class FetchDetails extends React.Component{
     componentDidMount(){
         detailsFetch()
             .then(results=>{
-                console.log(results.companyName);
+                // console.log(results.companyName);
                 this.props.dispatch({type: "SET_STOCK_DETAILS", stockSymbol: results.stockSymbol, description: results.description, companyName: results.companyName})
             })
         priceFetch()
@@ -24,7 +24,7 @@ class FetchDetails extends React.Component{
 
 
 let StockDetailsScreen = (props) =>{
-    console.log(props);
+    // console.log(props);
     return <div>
         <StockDetailsRow {...props} />
     </div>

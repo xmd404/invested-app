@@ -33,9 +33,6 @@ let postToken = (req, res) => {
                 if (user.password === loginPasswordInput && user.email === loginEmailInput) {
                     let token = createToken(user);
                     let userProfileInformation = { token: token, user: user };
-                    res.set('Access-Control-Allow-Origin', '*');
-                    res.set('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
-                    res.set('Access-Control-Allow-Headers', 'Origin, Content-Type, X-Auth-Token');
                     res.send(JSON.stringify(userProfileInformation));
                 } else {
                     res.send('Wrong password');
@@ -70,19 +67,37 @@ let postUserSignupInformation = (req, res) => {
             users (userName, email, password, cash, portfolioQuantity)
             VALUES ('${userInformation.signupNameInput}', '${userInformation.signupEmailInput}', '${userInformation.signupPasswordInput}', '10000', '0' )`)
         .then(data=> {
-            res.set('Access-Control-Allow-Origin', '*');
-            res.set('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
-            res.set('Access-Control-Allow-Headers', 'Origin, Content-Type, X-Auth-Token');
             res.send(userInformation);
         })
     });
 };
 
+let postUserCash = (req, res) => {
+    readBody(req, (body) => {
+        let userInformation = JSON.parse(body);
+        console.log(userInformation);
+        db.query(`UPDATE users SET cash=${userInformation.cash} WHERE email='${userInformation.userEmail}'`)
+        .then(results=> {
+            console.log(result);
+            res.send('cash updated');
+        })
+    })
+}
+
 let getUserInformation = (req, res) => {
     db.one('SELECT * FROM users WHERE ')
 };
 
+let allowCORS = (req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Origin, Content-Type, X-Auth-Token');
+    next();
+};
+
 let server = express();
+server.use(allowCORS);
+server.put('/updatecash', postUserCash)
 server.post('/userinformation', getUserInformation)
 server.post('/usersignup', postUserSignupInformation)
 server.post('/userlogin', postToken);
