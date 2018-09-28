@@ -2,6 +2,8 @@ import React from 'react';
 import StockDetailsRow from './stock-details-row.js';
 import { connect } from 'react-redux';
 import detailsFetch from './details-fetch.js';
+import priceFetch from './price-fetch.js';
+
 
 class FetchDetails extends React.Component{
     componentDidMount(){
@@ -9,6 +11,10 @@ class FetchDetails extends React.Component{
             .then(results=>{
                 console.log(results.companyName);
                 this.props.dispatch({type: "SET_STOCK_DETAILS", stockSymbol: results.stockSymbol, description: results.description, companyName: results.companyName})
+            })
+        priceFetch()
+            .then(price=>{
+                this.props.dispatch({type: "SET_STOCK_PRICE", stockSymbol: "AAPL", stockPrice: price})
             })
     }
     render(){

@@ -12,8 +12,6 @@ let reducer = (oldState, action) => {
             stockPrice: action.stockPrice,
             stockSymbol: action.stockSymbol
         }
-<<<<<<< HEAD
-=======
     } 
     else if(action.type ==='SET_STOCK_DETAILS'){
         return{
@@ -22,7 +20,6 @@ let reducer = (oldState, action) => {
             description: action.description,
             companyName: action.companyName
         }
->>>>>>> master
     } else if (action.type === 'SET_QUANTITY_TO_BUY') {
         return {
             ...oldState,
