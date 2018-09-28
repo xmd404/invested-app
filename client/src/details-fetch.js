@@ -6,7 +6,7 @@ let detailsFetch = () => {
             return response.json()})
             .then(data =>{
                 let results =(data);
-                console.log(results.symbol, results.companyName, results.industry, results.description);
+                // console.log(results.symbol, results.companyName, results.industry, results.description);
                 return results;
             })
 }

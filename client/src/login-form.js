@@ -4,7 +4,7 @@ import loginUser from './loginUser.js';
 import clearUserInput from './clearUserInput';
 
 let LoginForm = (props) => {
-    console.log(props);
+    // console.log(props);
     return <form
         props={props}
         className="login-form"

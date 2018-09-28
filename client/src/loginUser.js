@@ -14,7 +14,7 @@ let loginUser = (props) => {
                 let userProfileInformation = result;
                 localStorage.setItem("token", JSON.stringify(userProfileInformation.token));
                 props.history.push('/');
-                props.dispatch({type: 'SET_PROFILE_HEADER', userName: result.user.username, userCash: result.user.cash, userPortfolioValue: result.user.portfolioquantity})
+                props.dispatch({type: 'SET_PROFILE_HEADER', userEmail: result.user.email, userName: result.user.username, userCash: result.user.cash, userPortfolioValue: result.user.portfolioquantity})
             }
         })
 }
