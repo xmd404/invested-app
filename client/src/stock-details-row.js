@@ -12,10 +12,12 @@ let StockDetailsRow = (props) =>{
     return <div>
         <p>Company Name: {props.companyName}</p>
         <p>Company Description: {props.description}</p>
-        <StockDetailsHistoryRow dates={filterStockHistory(dates)} />
+        <p>Current Price: {props.stockPrice}</p>
         <StockDetailBuyForm {...props}/>
         <NavLink to="/profile"><button type="button" >Back to Profile</button></NavLink>
-    </div>
+        <h3>Price History: </h3>
+        <StockDetailsHistoryRow dates={filterStockHistory(dates)} />
+     </div>
 }
 let ConnectedStockDetailsRow = connect (state=> {
     return {
