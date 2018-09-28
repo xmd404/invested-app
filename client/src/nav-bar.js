@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import UserName from './user-name.js';
 
 let NavBar = () =>
     <div className="nav-bar">

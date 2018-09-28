@@ -13,7 +13,7 @@ let Router = () => {
         <HashRouter>
             <div>
                 <NavBar />
-                <Route exact path="/" component={UserProfile} />
+                <Route exact path="/" component={LoginScreen} />
                 <Route exact path="/profile" component={UserProfile} />
                 <Route exact path="/login" component={LoginScreen} />
                 <Route exact path="/signup" component={SignupScreen} />
