@@ -3,7 +3,7 @@ CREATE TABLE users(
     userName TEXT NOT NULL,
     email TEXT NOT NULL UNIQUE,
     password TEXT NOT NULL,
-    cash INTEGER NOT NULL,
+    cash NUMERIC NOT NULL,
     portfolioQuantity INTEGER NOT NULL
 );
 

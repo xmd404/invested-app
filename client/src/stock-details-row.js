@@ -24,7 +24,8 @@ let StockDetailsRow = (props) =>{
 let ConnectedStockDetailsRow = connect (state=> {
     return {
         quantityToBuy: state.quantityToBuy,
-        portfolioQuantity: state.portfolioQuantity
+        portfolioQuantity: state.portfolioQuantity,
+        userCash: state.userCash
     }
 })(StockDetailsRow);
 

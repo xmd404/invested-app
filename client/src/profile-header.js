@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 let ProfileHeader = (props) =>
     <div className="profile-header">
         <h3>User Name: {props.userName}</h3>
-        <h3>Cash: {props.userCash}</h3>
-        <h3>Portfolio Value: {props.userPortfolioValue}</h3>
+        <h3>Cash: ${props.userCash}</h3>
+        <h3>Portfolio Value: ${props.userPortfolioValue}</h3>
     </div>
 
 

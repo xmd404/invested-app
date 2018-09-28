@@ -2,9 +2,7 @@ import React from 'react';
 import UserAuthenticationInput from './user-authentication-input.js';
 import loginUser from './loginUser.js';
 import clearUserInput from './clearUserInput';
-
 let LoginForm = (props) => {
-    console.log(props);
     return <form
         props={props}
         className="login-form"
@@ -31,7 +29,7 @@ let LoginForm = (props) => {
             inputClassName="login-input" 
             {...props}
         />
-        <input type="submit" value="Continue" className="login-submit-button" ></input>
+        <input type="submit" value="Log In" className="login-submit-button" ></input>
     </form>
 };
 
