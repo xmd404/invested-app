@@ -9,15 +9,17 @@ let dates = [{"date":"2018-08-27","open":217.15,"high":218.74,"low":216.33,"clos
 
 let StockDetailsRow = (props) =>{
     console.log(props);
-    return <div>
-        <p>Company: {props.companyName}</p>
-        <p>Description: {props.description}</p>
-        <p>Current Price: {props.stockPrice}</p>
-        <StockDetailBuyForm {...props}/>
-        <NavLink to="/profile"><button type="button" >Back to Profile</button></NavLink>
-        <h3>Price History: </h3>
-        <StockDetailsHistoryRow dates={filterStockHistory(dates)} />
-     </div>
+    return (
+        <div className="details-card">
+            <h3>Company: {props.companyName}</h3>
+            <p>{props.description}</p>
+            <p><b>Current Price</b>: ${props.stockPrice}</p>
+            <StockDetailBuyForm {...props}/>
+            <NavLink to="/profile"><button type="button" className="btn info" >Back to Profile</button></NavLink>
+            <h3>Price History: </h3>
+            <StockDetailsHistoryRow dates={filterStockHistory(dates)} />
+        </div>
+    )
 }
 let ConnectedStockDetailsRow = connect (state=> {
     return {
