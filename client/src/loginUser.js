@@ -26,6 +26,7 @@ let loginUser = (props) => {
                 // }
                 props.dispatch({type: 'SET_PROFILE_HEADER', userEmail: result.user.email, userName: result.user.username, userCash: result.user.cash, portfolioQuantity: result.user.portfolioquantity, userPortfolioValue: (result.user.portfolioquantity * props.stockPrice)})
                 props.history.push('/');
+
             }
         })
 }
