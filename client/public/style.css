@@ -73,3 +73,13 @@
     list-style: none;
     justify-content: space-around;
 }
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+@media (min-width: 768px) {
+    .profile-header {
+        flex-direction: row;
+    }
+}
