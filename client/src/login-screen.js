@@ -14,7 +14,10 @@ let ConnectedLoginScreen = connect(state=> {
     console.log(state);
     return {
         loginEmailInput: state.loginEmailInput,
-        loginPasswordInput: state.loginPasswordInput
+        loginPasswordInput: state.loginPasswordInput,
+        userName: state.userName,
+        userCash: state.userCash,
+        userPortfolioValue: state.userPortfolioValue,
     }
 })(LoginScreen);
 

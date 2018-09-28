@@ -12,6 +12,17 @@ let reducer = (oldState, action) => {
             stockPrice: action.stockPrice,
             stockSymbol: action.stockSymbol
         }
+<<<<<<< HEAD
+=======
+    } 
+    else if(action.type ==='SET_STOCK_DETAILS'){
+        return{
+            ...oldState,
+            stockSymbol: action.stockSymbol,
+            description: action.description,
+            companyName: action.companyName
+        }
+>>>>>>> master
     } else if (action.type === 'SET_QUANTITY_TO_BUY') {
         return {
             ...oldState,
@@ -34,6 +45,18 @@ let reducer = (oldState, action) => {
             signupNameInput: '',
             signupEmailInput: '',
             signupPasswordInput: '',
+        }
+    } else if (action.type === 'SET_USERNAME') {
+        return {
+            ...oldState,
+            userName: action.userName
+        }
+    } else if (action.type === 'SET_PROFILE_HEADER') {
+        return {
+            ...oldState,
+            userName: action.userName,
+            userCash: action.userCash,
+            userPortfolioValue: action.userPortfolioValue,
         }
     } else {
         return {

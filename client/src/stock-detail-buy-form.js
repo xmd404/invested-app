@@ -4,11 +4,7 @@ let StockDetailBuyForm = (props) =>
     <form
         onSubmit={ (event) => {
             event.preventDefault();
-<<<<<<< HEAD
-            props.dispatch({type: 'SET_PORTFOLIO_QUANTITY', portfolioQuantity: ''})
-=======
             props.dispatch({type: 'SET_PORTFOLIO_QUANTITY', portfolioQuantity: props.quantityToBuy})
->>>>>>> master
         }}>
         <div>
             <input 
