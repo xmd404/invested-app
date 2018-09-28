@@ -52,7 +52,7 @@ body {
 .qty-input{
     margin: 1em 0;
     padding: 1.15em 0.25em;
-    width: 97%;
+    width: 98%;
 }
 .btn{
     margin: .25em;
@@ -73,16 +73,12 @@ body {
     flex-direction: column;
     align-items: center;
 }
-.login-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.login-input {
-    margin: 0.25em 0;
+.email{
+    padding: 1.15em 0.25em;
 }
 .login-submit-button {
     margin: 0.25em 0;
+    width: 100%;
 }
 .signup-header {
     text-align: center;

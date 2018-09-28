@@ -14,6 +14,7 @@ let StockDetailsRow = (props) =>{
             <h3>Company: {props.companyName}</h3>
             <p>{props.description}</p>
             <p><b>Current Price</b>: ${props.stockPrice}</p>
+            <p><b>Qty Owned: </b></p>
             <StockDetailBuyForm {...props}/>
             <NavLink to="/profile"><button type="button" className="btn info" >Back to Profile</button></NavLink>
             <h3>Price History: </h3>

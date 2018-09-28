@@ -30,8 +30,9 @@ let StockDetailBuyForm = (props) =>
                     props.dispatch({type: 'SET_QUANTITY_TO_BUY', quantityToBuy: value})
                 }}
                 type="number"
+                className="qty-input"
+                placeholder="Purchase Quantity"
             />
-            <p>Qty</p>
         </div>
         <input type="submit" value="Buy Stock" className="btn buy" />
     </form>
