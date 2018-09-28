@@ -13,7 +13,7 @@ let loginUser = (props) => {
             } else {
                 let userProfileInformation = result;
                 localStorage.setItem("token", JSON.stringify(userProfileInformation.token));
-                props.history.push('/');
+                props.history.push('/profile');
                 props.dispatch({type: 'SET_PROFILE_HEADER', userEmail: result.user.email, userName: result.user.username, userCash: result.user.cash, userPortfolioValue: result.user.portfolioquantity})
             }
         })
