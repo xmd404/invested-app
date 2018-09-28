@@ -33,6 +33,14 @@ body {
     padding: 1.25em;
     
 }
+.details-card{
+    width: 100%;
+    max-width: 550px;
+    margin: 1.25em;
+    border: 1px #D5D5D5 solid;
+    padding: 1.25em;
+    
+}
 .stock-info-short{
     flex-direction: row;
     align-items: center;
@@ -46,13 +54,16 @@ body {
     padding: 1.15em 0.25em;
     width: 97%;
 }
-.buy-btn{
-    margin: 0;
+.btn{
+    margin: .25em;
     padding: 1.25em;
     width: 100%;
     color: #FFF;
-    background-color: rgb(0, 153, 255);
     border: none;
+}.buy{
+    background-color: rgb(0, 153, 255);
+}.info{
+    background-color: rgb(0, 255, 55);
 }
 .login-header {
     text-align: center;

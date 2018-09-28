@@ -22,6 +22,9 @@ class FetchDetails extends React.Component{
         return (
             <div>
                 <ProfileHeader />
+                <div className="screen-header">
+                    <h1>Stock Details</h1>
+                </div>
                 <StockDetailsScreen {...this.props}/>
             </div>
         )
@@ -30,10 +33,12 @@ class FetchDetails extends React.Component{
 
 
 let StockDetailsScreen = (props) =>{
-    // console.log(props);
-    return <div>
-        <StockDetailsRow {...props} />
-    </div>
+    console.log(props);
+    return (
+        <div className="container">
+            <StockDetailsRow {...props} />
+        </div>
+    )
 }
 
 let StockDetailsContainer = connect(state=> state)(FetchDetails);

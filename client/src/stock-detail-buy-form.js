@@ -33,7 +33,7 @@ let StockDetailBuyForm = (props) =>
             />
             <p>Qty</p>
         </div>
-        <input type="submit" value="Buy Stock" />
+        <input type="submit" value="Buy Stock" className="btn buy" />
     </form>
 
 export default StockDetailBuyForm;
