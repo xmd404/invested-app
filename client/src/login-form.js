@@ -3,7 +3,6 @@ import UserAuthenticationInput from './user-authentication-input.js';
 import loginUser from './loginUser.js';
 import clearUserInput from './clearUserInput';
 let LoginForm = (props) => {
-    // console.log(props);
     return <form
         props={props}
         className="login-form"

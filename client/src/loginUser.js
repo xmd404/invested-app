@@ -11,10 +11,22 @@ let loginUser = (props) => {
             } else if (result === 'Wrong password') {
                 console.log(result);
             } else {
+                console.log(result);
+                console.log(result.user);
                 let userProfileInformation = result;
                 localStorage.setItem("token", JSON.stringify(userProfileInformation.token));
-                props.history.push('/profile');
-                props.dispatch({type: 'SET_PROFILE_HEADER', userEmail: result.user.email, userName: result.user.username, userCash: result.user.cash, userPortfolioValue: result.user.portfolioquantity})
+                // let updatedUserPortfolioValue = (props, userProfileInformation) => {
+                //     console.log(props);
+                //     console.log(userProfileInformation);
+                //     if (result.user.portfolioquantity === null) {
+                //         return 0;
+                //     } else {
+                //         return result.user.portfolioquantity * props.stockPrice;
+                //     }
+                // }
+                props.dispatch({type: 'SET_PROFILE_HEADER', userEmail: result.user.email, userName: result.user.username, userCash: result.user.cash, portfolioQuantity: result.user.portfolioquantity, userPortfolioValue: (result.user.portfolioquantity * props.stockPrice)})
+                props.history.push('/');
+
             }
         })
 }

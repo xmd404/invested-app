@@ -4,10 +4,14 @@ let StockDetailBuyForm = (props) =>
     <form
         onSubmit={ (event) => {
             event.preventDefault();
-            let updatedUserCash = props.userCash - (props.quantityToBuy * props.stockPrice)
-            props.dispatch({type: 'SET_PORTFOLIO_QUANTITY', portfolioQuantity: props.quantityToBuy, userCash: updatedUserCash.toFixed(2)})
-            let userInformation = { userEmail: props.userEmail, cash: updatedUserCash};
-            console.log(userInformation);
+            console.log(props);
+            let updatedPortfolioQuantity = Number(props.portfolioQuantity) + Number(props.quantityToBuy);
+            console.log(updatedPortfolioQuantity);
+            let updatedUserCash = props.userCash - (props.quantityToBuy * props.stockPrice);
+            let updatedPortfolioValue = Number(props.stockPrice) * Number(updatedPortfolioQuantity);
+            console.log(updatedPortfolioValue);
+            props.dispatch({type: 'SET_PORTFOLIO_QUANTITY', portfolioQuantity: updatedPortfolioQuantity, userCash: updatedUserCash.toFixed(2), userPortfolioValue: updatedPortfolioValue})
+            let userInformation = { userEmail: props.userEmail, cash: updatedUserCash, portfolioQuantity: updatedPortfolioQuantity};
             fetch(`${process.env.REACT_APP_APIHOST}/updatecash`, {
                 method: 'PUT',
                 body: JSON.stringify(userInformation),

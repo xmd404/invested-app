@@ -21,7 +21,9 @@ let ConnectedLoginScreen = connect(state=> {
         loginPasswordInput: state.loginPasswordInput,
         userName: state.userName,
         userCash: state.userCash,
+        portfolioQuantity: state.portfolioQuantity,
         userPortfolioValue: state.userPortfolioValue,
+        stockPrice: state.stockPrice
     }
 })(LoginScreen);
 

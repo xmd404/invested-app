@@ -41,7 +41,8 @@ let initialState = {
     quantityToBuy: '',
     portfolioQuantity: '',
     companyName: '',
-    description: ''
+    description: '',
+    stockPrice: ''
 }
 
 let store = createStore(
