@@ -28,10 +28,13 @@ class FetchStocks extends React.Component{
 let UserProfile = (props) =>
     <div>
         <div className="screen-header">
-            <h1>User Portfolio</h1>
-            <p>Here are the users stock and current value</p>
+            <h1>My Portfolio</h1>
         </div>
-        <StockCard stock={props}/>
+        <div className="container">
+            <StockCard stock={props}/>
+            <StockCard stock={props}/>
+            <StockCard stock={props}/>
+        </div>
     </div>
 
 let UserProfileContainer = connect(state=> state)(FetchStocks);
