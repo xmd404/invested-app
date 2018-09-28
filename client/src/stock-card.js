@@ -5,8 +5,8 @@ let StockCard = (props) =>{
     return <div className="stock-card">
         <br/>
         <div className="stock-info-short">
-            <h3 className="company-name">Company Name: {props.companyName}</h3>
-            <p className="company-description">Industry: {props.industry}</p>
+            <h3 className="company-name">Company: {props.companyName}</h3>
+            <h4 className="company-description">Industry: {props.industry}</h4>
             <p className="current-stock-price">Stock Price: {props.stockPrice}</p>
         </div>
         <div className="buy-info">

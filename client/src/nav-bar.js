@@ -9,9 +9,6 @@ let NavBar = () =>
             <NavLink to="/profile">|  Profile  |</NavLink>
             <NavLink to="/details">|  Details  ||</NavLink>
         </div>
-        <div className="user-info">
-            <UserName />
-        </div>
     </div>
 
 export default NavBar;
