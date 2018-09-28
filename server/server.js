@@ -32,10 +32,11 @@ let postToken = (req, res) => {
             .then(user => {
                 if (user.password === loginPasswordInput && user.email === loginEmailInput) {
                     let token = createToken(user);
+                    let userProfileInformation = { token: token, user: user };
                     res.set('Access-Control-Allow-Origin', '*');
                     res.set('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
                     res.set('Access-Control-Allow-Headers', 'Origin, Content-Type, X-Auth-Token');
-                    res.send(token);
+                    res.send(JSON.stringify(userProfileInformation));
                 } else {
                     res.send('Wrong password');
                 }
@@ -78,7 +79,7 @@ let postUserSignupInformation = (req, res) => {
 };
 
 let getUserInformation = (req, res) => {
-    
+    db.one('SELECT * FROM uers WHERE ')
 };
 
 let server = express();
