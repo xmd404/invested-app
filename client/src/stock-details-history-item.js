@@ -1,6 +1,6 @@
 import React from 'react';
 
-let StockDetailsHistoryItem = (props) =>
+let StockDetailsHistoryItem = (props) => 
     <li>
         <p>{props.date.close}</p>
         <p>{props.date.date}</p>
