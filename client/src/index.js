@@ -34,6 +34,7 @@ let initialState = {
     signupPasswordInput: '',
     loginEmailInput: '',
     loginPasswordInput: '',
+    userName: '',
     quantityToBuy: '',
     portfolioQuantity: '',
     companyName: '',

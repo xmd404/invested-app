@@ -43,6 +43,11 @@ let reducer = (oldState, action) => {
             signupEmailInput: '',
             signupPasswordInput: '',
         }
+    } else if (action.type === 'SET_USERNAME') {
+        return {
+            ...oldState,
+            userName: action.userName
+        }
     } else {
         return {
             ...oldState

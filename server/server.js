@@ -77,7 +77,12 @@ let postUserSignupInformation = (req, res) => {
     });
 };
 
+let getUserInformation = (req, res) => {
+    
+};
+
 let server = express();
+server.post('/userinformation', getUserInformation)
 server.post('/usersignup', postUserSignupInformation)
 server.post('/userlogin', postToken);
 

@@ -2,6 +2,7 @@ import React from 'react';
 import UserAuthenticationInput from './user-authentication-input.js';
 import loginUser from './loginUser.js';
 import clearUserInput from './clearUserInput';
+import setUsername from './setUsername.js';
 
 let LoginForm = (props) => {
     console.log(props);
@@ -11,6 +12,7 @@ let LoginForm = (props) => {
         onSubmit={ (event) => {
             event.preventDefault();
             loginUser(props);
+            setUsername(props);
             clearUserInput(props, 'LOGIN');
         }}>
         <UserAuthenticationInput 
