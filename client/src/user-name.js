@@ -1,8 +1,8 @@
 import React from 'react';
 
-let UserName = (props)=>
+let UserName = ()=>
     <div>
-        <h3>User Name {props.userName}</h3>
+        <h3>User Name </h3>
         <h4>Cash: </h4>
         <h4>Portfolio Value: </h4>
     </div>
