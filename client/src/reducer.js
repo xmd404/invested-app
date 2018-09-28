@@ -18,7 +18,8 @@ let reducer = (oldState, action) => {
             ...oldState,
             stockSymbol: action.stockSymbol,
             description: action.description,
-            companyName: action.companyName
+            companyName: action.companyName,
+            industry: action.industry,
         }
     } else if (action.type === 'SET_QUANTITY_TO_BUY') {
         return {

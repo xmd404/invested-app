@@ -1,12 +1,12 @@
 import React from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 
 let StockCard = (props) =>{
     return <div className="stock-card">
         <br/>
         <div className="stock-info-short">
-            <h3 className="company-name">Company Name</h3>
-            <p className="company-description">Short company description.</p>
+            <h3 className="company-name">Company Name: {props.companyName}</h3>
+            <p className="company-description">Industry: {props.industry}</p>
             <p className="current-stock-price">Stock Price: {props.stockPrice}</p>
         </div>
         <div className="buy-info">
@@ -17,5 +17,4 @@ let StockCard = (props) =>{
 }
 
 let connectedStockCard = connect(state=>state)(StockCard);
-
 export default connectedStockCard;

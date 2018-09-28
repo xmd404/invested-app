@@ -79,7 +79,7 @@ let postUserSignupInformation = (req, res) => {
 };
 
 let getUserInformation = (req, res) => {
-    db.one('SELECT * FROM uers WHERE ')
+    db.one('SELECT * FROM users WHERE ')
 };
 
 let server = express();

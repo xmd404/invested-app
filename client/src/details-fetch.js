@@ -5,7 +5,7 @@ let detailsFetch = () => {
         .then(response =>{
             return response.json()})
             .then(data =>{
-                let results =(data);
+                let results = (data);
                 console.log(results.symbol, results.companyName, results.industry, results.description);
                 return results;
             })
