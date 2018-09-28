@@ -76,9 +76,9 @@ let postUserCash = (req, res) => {
     readBody(req, (body) => {
         let userInformation = JSON.parse(body);
         console.log(userInformation);
-        db.query(`UPDATE users SET cash=${userInformation.cash} WHERE email='${userInformation.userEmail}'`)
+        db.query(`UPDATE users SET cash=${userInformation.cash}, portfolioquantity=${userInformation.portfolioQuantity} WHERE email='${userInformation.userEmail}'`)
         .then(results=> {
-            console.log(result);
+            console.log(results);
             res.send('cash updated');
         })
     })
