@@ -3,6 +3,7 @@ import StockDetailsRow from './stock-details-row.js';
 import { connect } from 'react-redux';
 import detailsFetch from './details-fetch.js';
 import priceFetch from './price-fetch.js';
+import ProfileHeader from './profile-header';
 
 
 class FetchDetails extends React.Component{
@@ -18,7 +19,12 @@ class FetchDetails extends React.Component{
             })
     }
     render(){
-        return <StockDetailsScreen {...this.props}/>
+        return (
+            <div>
+                <ProfileHeader />
+                <StockDetailsScreen {...this.props}/>
+            </div>
+        )
     }
 }
 
