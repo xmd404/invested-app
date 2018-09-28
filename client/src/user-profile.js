@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import StockCard from './stock-card.js';
 import priceFetch from './price-fetch.js';
 import detailsFetch from './details-fetch'
+import ProfileHeader from './profile-header';
 
 let mapStateToProps = (state) => {
     return {stocks: state.stoks}
@@ -27,6 +28,7 @@ class FetchStocks extends React.Component{
 
 let UserProfile = (props) =>
     <div>
+        <ProfileHeader />
         <div className="screen-header">
             <h1>My Portfolio</h1>
         </div>
